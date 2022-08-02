@@ -1,3 +1,5 @@
+
+
 export default function textToHTML(data) {
   let fullJsonData = [];
 
@@ -37,7 +39,14 @@ export default function textToHTML(data) {
       data[i].slice(0, 2) !== "h4" &&
       data[i].slice(0, 2) !== "im"
     ) {
-      let pg = { type: "p", text: data[i].slice(0) };
+
+      let slicedText = data[i].slice(0).replaceAll("--", "<strong>").replaceAll("++", "</strong>").replaceAll("<<", "<em>").replaceAll(">>" , "</em>")
+      
+
+     
+      let pg = { type: "p", text: slicedText};
+
+      
 
       fullJsonData.push(pg);
     }

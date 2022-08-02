@@ -1,3 +1,7 @@
+import getBold from "./boldfonts"
+
+
+
 let o = [];
 let text;
 export default function outputHTML(data) {
@@ -18,6 +22,7 @@ export default function outputHTML(data) {
       break;
 
     case "p":
+    
       text = `<p>${data.text}</p>`;
       break;
 
